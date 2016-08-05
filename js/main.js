@@ -1,4 +1,4 @@
-var apiurl = "http://cors.io/?u=https://www.metlink.org.nz/api/v1/";
+var apiurl = "https://crossorigin.me/https://www.metlink.org.nz/api/v1/";
 
 $(document).ready(function(){
 
