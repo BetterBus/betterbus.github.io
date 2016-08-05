@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Better Bus!</title>
+		<!-- JQuery -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<!-- Bootstrap -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- Main Stylesheet -->
+		<link href="css/style.css" rel="stylesheet">
+		<!-- FontAwesome -->
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<!-- Main JS file -->
+		<script src="js/main.js"></script>
+		<!-- Moment.js -->
+		<script src="js/moment.js"></script>
+	</head>
+	<body>
+		<div class = "header">
+			<div class = "middle">
+				<h1 class = "title"><i class = "fa fa-bus"></i> Better Bus!</h1>
+				<h2 class = "h2-title">Quick and easy Bus information</h2>
+			</div>
+		</div>
+		<div class = "navigation">
+			<div class = "middle">
+				<ul class = "navigation-tabs">
+					<li class = "active">Realtime</li>
+					<li>Bus Routes</li>
+					<li>Map</li>
+					<li>About</li>
+				</ul>
+			</div>
+		</div>
+		<div class = "segment">
+			<div class = "middle">
+				<h3>Know your stop number?</h3>
+				<div class = "input-group">
+					<input id = "stop-number-input" placeholder = "eg. 5010" type = "text" class = "form-control"/>
+					<span class = "input-group-btn">
+				        <button onclick = "updateRealtime()" class = "btn btn-default" type = "button">Go!</button>
+			      	</span>
+				</div>
+
+				<div id = "realtime-box" hidden>
+					<div class = "panel panel-primary">
+						<div class = "panel-heading">
+							<span id = "stop-number"></span> 
+							<i id = "realtime-loading" class = "fa fa-refresh fa-spin"></i>
+						</div>
+						<table id = "realtime-table" class = "table table-hover">
+
+						</table>
+					</div>
+				</div>
+
+				<h3>Don't? Have a look on the map</h3>
+				<button class = "btn btn-primary">Open map</button>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
