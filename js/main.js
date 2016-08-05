@@ -21,10 +21,20 @@ function updateRealtime(){
 				service.DestinationStopName+"</td><td>"+
 				readableSeconds(service.DisplayDepartureSeconds)+
 				isDue(service.DisplayDepartureSeconds)+"</td><td>"+
-				status(service.DepartureStatus)+"</td></tr>");
+				status(service.DepartureStatus)+"</td><td>"+
+				lowFloor(service.VehicleFeature)+"</td></tr>");
 			$("#realtime-loading").hide();
 		}
 	});
+}
+
+function lowFloor(feature){
+	if(feature == "lowFloor"){
+		return '<i class="fa fa-wheelchair"></i>';
+	}
+	else{
+		return "";
+	}
 }
 
 function status(status){
