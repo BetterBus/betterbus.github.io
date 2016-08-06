@@ -18,6 +18,11 @@ function updateRealtime(){
 	$.getJSON(apiurl + "StopDepartures/" + stopnum, function(data) {
 		console.log(data);
 		$("#stop-number").html("Stop " + stopnum + " " + data.Stop.Name);
+		if(data.Services == undefined){
+			$("#realtime-table").append("<tr><td>No services sorry</td></tr>");
+			$("#realtime-loading").hide();
+			return;
+		}
 		for(var i = 0; i < data.Services.length; i++){
 			var service = data.Services[i];
 			console.log(service.ServiceID + " - " + service.DestinationStopName);
