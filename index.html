@@ -13,6 +13,8 @@
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<!-- Main JS file -->
 		<script src="js/main.js"></script>
+		<!-- Stop Info file -->
+		<script src="js/stopinfo.js"></script>
 		<!-- Moment.js -->
 		<script src="js/moment.js"></script>
 	</head>
@@ -56,7 +58,49 @@
 				</div>
 
 				<h3>Don't? Have a look on the map</h3>
-				<button class = "btn btn-primary">Open map</button>
+			</div>
+		</div>
+		<div class = "segment">
+			<div class = "middle">
+				<div id = "map"></div>
+				<script>
+			      	function initMap() {
+			      		var myLatLng = {lat: -41.2838694, lng: 174.7753459};
+
+			        	var mapDiv = document.getElementById('map');
+
+			        	var map = new google.maps.Map(mapDiv, {
+			            	center: myLatLng,
+			            	zoom: 15
+			        	});
+
+			        	var markers = new Array();
+
+					  	for(var i = 0; i < stops.length; i++){
+					  		var latitude = parseFloat(stops[i].stop_lat);
+							var longitude = parseFloat(stops[i].stop_lon);
+							var marker = new google.maps.Marker({
+							    position: { lat: latitude, lng: longitude },
+							    map: map,
+							    title: stops[i].stop_name,
+							    url: stops[i].stop_code
+						  	});
+					  		markers.push(marker);
+			                google.maps.event.addListener(marker,'click',function() {
+			                	gotoStop(this.url);
+			                });
+					  	}
+			      	}
+			    </script>
+			    <script async defer
+			        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBetv5FY0MWB4QT0lyMxfx0W0utNRRGa4M&callback=initMap">
+			    </script>
+			</div>
+		</div>
+		<br/>
+		<div class = "footer">
+			<div class = "middle">
+				Made with love <3
 			</div>
 		</div>
 	</body>

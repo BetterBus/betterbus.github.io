@@ -1,8 +1,13 @@
 var apiurl = "https://crossorigin.me/https://www.metlink.org.nz/api/v1/";
 
 $(document).ready(function(){
-
+	genStopObjects();
 });
+
+function gotoStop(stop){
+	$("#stop-number-input").val(stop);
+	updateRealtime();
+}
 
 function updateRealtime(){
 	var stopnum = $("#stop-number-input").val();
